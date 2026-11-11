@@ -1,0 +1,108 @@
+cmake_minimum_required(VERSION 3.5)
+project(dynmsg_demo)
+
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+  set(FLAG_NO_WARNINGS "-w")
+endif()
+
+# find dependencies
+find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_ros_core REQUIRED)
+find_package(dynmsg REQUIRED)
+find_package(rcl REQUIRED)
+find_package(rcl_action REQUIRED)
+find_package(rmw REQUIRED)
+find_package(yaml_cpp_vendor REQUIRED)
+
+include_directories(include)
+add_library(dynmsg_demo_library STATIC
+  src/cli.cpp
+  src/typesupport_utils.cpp
+)
+target_link_libraries(dynmsg_demo_library
+  ament_cmake_ros_core::ament_ros_defaults
+  dynmsg::dynmsg
+  rcl::rcl
+  rcl_action::rcl_action
+  yaml-cpp
+)
+
+target_include_directories(dynmsg_demo_library PUBLIC
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+  "$<INSTALL_INTERFACE:include>"
+)
+ament_export_include_directories(include)
+ament_export_libraries(dynmsg_demo_library)
+ament_export_targets(dynmsg_demo_library HAS_LIBRARY_TARGET)
+ament_export_dependencies(ament_cmake_ros_core)
+ament_export_dependencies(dynmsg)
+ament_export_dependencies(rcl)
+ament_export_dependencies(rcl_action)
+
+install(
+  DIRECTORY include/
+  DESTINATION include
+)
+
+install(
+  TARGETS dynmsg_demo_library
+  EXPORT dynmsg_demo_library
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+  RUNTIME DESTINATION bin
+  INCLUDES DESTINATION include
+)
+
+add_executable(clitool src/cli_tool.cpp)
+target_link_libraries(clitool PRIVATE
+  ament_cmake_ros_core::ament_ros_defaults
+  dynmsg_demo_library
+  dynmsg::dynmsg
+  rcl::rcl
+  rmw::rmw
+  yaml-cpp
+)
+
+install(TARGETS clitool DESTINATION lib/${PROJECT_NAME})
+
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+  # the following line skips the linter which checks for copyrights
+  # uncomment the line when a copyright and license is not present in all source files
+  #set(ament_cmake_copyright_FOUND TRUE)
+  ament_lint_auto_find_test_dependencies()
+
+  find_package(ament_cmake_gtest REQUIRED)
+  find_package(test_msgs REQUIRED)
+  find_package(example_interfaces REQUIRED)
+  find_package(dynmsg_msgs REQUIRED)
+  find_package(geometry_msgs REQUIRED)
+  find_package(std_msgs REQUIRED)
+
+  if(TEST_ASAN)
+    set(asan_link_lib -fsanitize=address)
+  endif()
+
+  ament_add_gtest(msg_parser_test test/msg_parser_test.cpp)
+  if(TEST_ASAN)
+    target_compile_options(msg_parser_test PRIVATE -fsanitize=address)
+  endif()
+  target_link_libraries(msg_parser_test dynmsg_demo_library ${asan_link_lib}
+    ament_cmake_ros_core::ament_ros_defaults
+    rcl::rcl
+    test_msgs::test_msgs
+    std_msgs::std_msgs
+    dynmsg_msgs::dynmsg_msgs
+    yaml-cpp
+  )
+  ament_add_gtest(read_msg_buffer test/test_read_msg_buffer.cpp)
+  target_link_libraries(read_msg_buffer
+    ament_cmake_ros_core::ament_ros_defaults
+    example_interfaces::example_interfaces
+    dynmsg_demo_library
+    test_msgs::test_msgs
+  )
+endif()
+
+ament_package()
