@@ -1,0 +1,15 @@
+ros-rolling-dynmsg-msgs (1.1.0-1trixie) trixie; urgency=high
+
+  * Use ament_ros_defaults for C and C++ standards (#39 <https://github.com/osrf/dynamic_message_introspection/issues/39>)
+  * Use proper SPDX ID for Apache-2.0 (#37 <https://github.com/osrf/dynamic_message_introspection/issues/37>)
+  * Add basic CI (#19 <https://github.com/osrf/dynamic_message_introspection/issues/19>)
+  * Add support for C++ messages, make conversion symmetrical, and refactor (#15 <https://github.com/osrf/dynamic_message_introspection/issues/15>)
+  * Clean up repository for release
+  * Feature/Read messages into YAML (#6 <https://github.com/osrf/dynamic_message_introspection/issues/6>)
+  * yaml to ros message (#4 <https://github.com/osrf/dynamic_message_introspection/issues/4>)
+  * 202009 demo
+  * Contributors: Christophe Bedard, Evan Flynn, Geoffrey Biggs, Teo Koon Peng
+
+ -- "Geoffrey Biggs" <geoff@openrobotics.org>  Tue, 10 Nov 2026 08:00:00 -0000
+
+
