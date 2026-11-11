@@ -1,0 +1,16 @@
+ros-rolling-dynmsg (1.1.0-1trixie) trixie; urgency=high
+
+  * Support rosidl::Buffer for uint8[] sequences (#44 <https://github.com/osrf/dynamic_message_introspection/issues/44>)
+  * Use ament_ros_defaults for C and C++ standards (#39 <https://github.com/osrf/dynamic_message_introspection/issues/39>)
+  * Fix u8 string literals in test for C++20 (#38 <https://github.com/osrf/dynamic_message_introspection/issues/38>)
+  * Use proper SPDX ID for Apache-2.0 (#37 <https://github.com/osrf/dynamic_message_introspection/issues/37>)
+  * Use {size,get}_function introspection functions (#16 <https://github.com/osrf/dynamic_message_introspection/issues/16>)
+  * Switch to target_link_libraries and add Kilted (#36 <https://github.com/osrf/dynamic_message_introspection/issues/36>)
+  * Fix yaml link error in Jazzy (#32 <https://github.com/osrf/dynamic_message_introspection/issues/32>)
+  * Add basic CI (#19 <https://github.com/osrf/dynamic_message_introspection/issues/19>)
+  * Add support for C++ messages, make conversion symmetrical, and refactor (#15 <https://github.com/osrf/dynamic_message_introspection/issues/15>)
+  * Contributors: Christophe Bedard, Evan Flynn, Kento Yabuuchi, Michael Carlstrom
+
+ -- "Geoffrey Biggs" <geoff@openrobotics.org>  Tue, 10 Nov 2026 08:00:00 -0000
+
+
