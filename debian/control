@@ -1,0 +1,12 @@
+Source: ros-rolling-dynmsg
+Section: misc
+Priority: optional
+Maintainer: "Geoffrey Biggs" <geoff@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-rolling-ament-cmake, ros-rolling-ament-cmake-gtest <!nocheck>, ros-rolling-ament-cmake-ros-core, ros-rolling-ament-lint-auto <!nocheck>, ros-rolling-ament-lint-common <!nocheck>, ros-rolling-rcutils, ros-rolling-rosidl-runtime-c, ros-rolling-rosidl-runtime-cpp, ros-rolling-rosidl-typesupport-introspection-c, ros-rolling-rosidl-typesupport-introspection-cpp, ros-rolling-std-msgs <!nocheck>, ros-rolling-yaml-cpp-vendor, ros-rolling-ros-workspace
+Homepage: https://index.ros.org/p/dynmsg/#rolling
+Standards-Version: 3.9.2
+
+Package: ros-rolling-dynmsg
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-rolling-ament-cmake-ros-core, ros-rolling-rcutils, ros-rolling-rosidl-runtime-c, ros-rolling-rosidl-runtime-cpp, ros-rolling-rosidl-typesupport-introspection-c, ros-rolling-rosidl-typesupport-introspection-cpp, ros-rolling-yaml-cpp-vendor, ros-rolling-ros-workspace
+Description: Introspection tools for message to/from YAML conversions
