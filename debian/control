@@ -1,0 +1,12 @@
+Source: ros-rolling-dynmsg-demo
+Section: misc
+Priority: optional
+Maintainer: "Geoffrey Biggs" <geoff@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-rolling-ament-cmake, ros-rolling-ament-cmake-ros-core, ros-rolling-ament-lint-auto <!nocheck>, ros-rolling-ament-lint-common <!nocheck>, ros-rolling-dynmsg, ros-rolling-dynmsg-msgs <!nocheck>, ros-rolling-example-interfaces <!nocheck>, ros-rolling-geometry-msgs <!nocheck>, ros-rolling-rcl, ros-rolling-rcl-action, ros-rolling-rmw, ros-rolling-std-msgs <!nocheck>, ros-rolling-test-msgs <!nocheck>, ros-rolling-yaml-cpp-vendor, ros-rolling-ros-workspace
+Homepage: https://index.ros.org/p/dynmsg_demo/#rolling
+Standards-Version: 3.9.2
+
+Package: ros-rolling-dynmsg-demo
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-rolling-ament-cmake-ros-core, ros-rolling-dynmsg, ros-rolling-rcl, ros-rolling-rcl-action, ros-rolling-rmw, ros-rolling-yaml-cpp-vendor, ros-rolling-ros-workspace
+Description: Demo of dynamic message type loading
