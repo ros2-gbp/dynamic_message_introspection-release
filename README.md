@@ -1,16 +1,12 @@
-# dynamic_message_introspection
+# `dynmsg_demo`
 
-This repo demonstrates how to do introspection of C and C++ messages.
-The [`dynmsg` package](./dynmsg) can convert ROS 2 messages into a YAML representation, and convert a YAML representation into ROS 2 messages.
+A demonstration of how to do dynamic introspection of messages using the `rcl` message API.
+This code can convert any message from the in-memory representation into a YAML representation, and convert a YAML representation into the in-memory representation ready for use in client software and for sending via a topic.
+All it needs is the compiled shared library that provides the message introspection information.
+(For message types included in a ROS 2 distribution, these libraries are already provided by the distribution.)
 
-The initial development of this code (with support for C messages) was graciously supported by [Rocos (@rocos.io)](https://www.rocos.io/).
-C++ messages support was added by [Christophe Bédard](https://github.com/christophebedard).
+The initial development of this code was graciously supported by [Rocos (@rocos.io)](https://www.rocos.io/).
 
-The [`dynmsg_demo` package](./dynmsg_demo) contains a demonstration of how to do dynamic introspection of messages using the `rcl` message API.
+## Quality Declaration
 
-## Examples
-
-For a C message, see [`conversion.c`](./test_dynmsg/examples/conversion_c.cpp).
-For a C++ message, see [`conversion.cpp`](./test_dynmsg/examples/conversion_cpp.cpp).
-
-For more examples, see the [message conversion tests for `dynmsg`](./test_dynmsg/test/test_conversion.cpp).
+This package claims to be in the **Quality Level 4** category, see the [Quality Declaration](QUALITY_DECLARATION.md) for more details.
