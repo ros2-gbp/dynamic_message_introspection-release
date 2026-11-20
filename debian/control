@@ -1,0 +1,12 @@
+Source: ros-lyrical-dynmsg-demo
+Section: misc
+Priority: optional
+Maintainer: "Geoffrey Biggs" <geoff@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-lyrical-ament-cmake, ros-lyrical-ament-cmake-ros-core, ros-lyrical-ament-lint-auto <!nocheck>, ros-lyrical-ament-lint-common <!nocheck>, ros-lyrical-dynmsg, ros-lyrical-dynmsg-msgs <!nocheck>, ros-lyrical-example-interfaces <!nocheck>, ros-lyrical-geometry-msgs <!nocheck>, ros-lyrical-rcl, ros-lyrical-rcl-action, ros-lyrical-rmw, ros-lyrical-std-msgs <!nocheck>, ros-lyrical-test-msgs <!nocheck>, ros-lyrical-yaml-cpp-vendor, ros-lyrical-ros-workspace
+Homepage: https://index.ros.org/p/dynmsg_demo/#lyrical
+Standards-Version: 3.9.2
+
+Package: ros-lyrical-dynmsg-demo
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lyrical-ament-cmake-ros-core, ros-lyrical-dynmsg, ros-lyrical-rcl, ros-lyrical-rcl-action, ros-lyrical-rmw, ros-lyrical-yaml-cpp-vendor, ros-lyrical-ros-workspace
+Description: Demo of dynamic message type loading
