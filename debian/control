@@ -1,0 +1,12 @@
+Source: ros-lyrical-dynmsg
+Section: misc
+Priority: optional
+Maintainer: "Geoffrey Biggs" <geoff@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-lyrical-ament-cmake, ros-lyrical-ament-cmake-gtest <!nocheck>, ros-lyrical-ament-cmake-ros-core, ros-lyrical-ament-lint-auto <!nocheck>, ros-lyrical-ament-lint-common <!nocheck>, ros-lyrical-rcutils, ros-lyrical-rosidl-runtime-c, ros-lyrical-rosidl-runtime-cpp, ros-lyrical-rosidl-typesupport-introspection-c, ros-lyrical-rosidl-typesupport-introspection-cpp, ros-lyrical-std-msgs <!nocheck>, ros-lyrical-yaml-cpp-vendor, ros-lyrical-ros-workspace
+Homepage: https://index.ros.org/p/dynmsg/#lyrical
+Standards-Version: 3.9.2
+
+Package: ros-lyrical-dynmsg
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lyrical-ament-cmake-ros-core, ros-lyrical-rcutils, ros-lyrical-rosidl-runtime-c, ros-lyrical-rosidl-runtime-cpp, ros-lyrical-rosidl-typesupport-introspection-c, ros-lyrical-rosidl-typesupport-introspection-cpp, ros-lyrical-yaml-cpp-vendor, ros-lyrical-ros-workspace
+Description: Introspection tools for message to/from YAML conversions
