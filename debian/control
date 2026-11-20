@@ -1,0 +1,12 @@
+Source: ros-kilted-dynmsg-demo
+Section: misc
+Priority: optional
+Maintainer: "Geoffrey Biggs" <geoff@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-kilted-ament-cmake, ros-kilted-ament-cmake-ros-core, ros-kilted-ament-lint-auto <!nocheck>, ros-kilted-ament-lint-common <!nocheck>, ros-kilted-dynmsg, ros-kilted-dynmsg-msgs <!nocheck>, ros-kilted-example-interfaces <!nocheck>, ros-kilted-geometry-msgs <!nocheck>, ros-kilted-rcl, ros-kilted-rcl-action, ros-kilted-rmw, ros-kilted-std-msgs <!nocheck>, ros-kilted-test-msgs <!nocheck>, ros-kilted-yaml-cpp-vendor, ros-kilted-ros-workspace
+Homepage: https://index.ros.org/p/dynmsg_demo/#kilted
+Standards-Version: 3.9.2
+
+Package: ros-kilted-dynmsg-demo
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kilted-ament-cmake-ros-core, ros-kilted-dynmsg, ros-kilted-rcl, ros-kilted-rcl-action, ros-kilted-rmw, ros-kilted-yaml-cpp-vendor, ros-kilted-ros-workspace
+Description: Demo of dynamic message type loading
