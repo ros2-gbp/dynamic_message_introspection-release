@@ -1,0 +1,12 @@
+Source: ros-humble-dynmsg-demo
+Section: misc
+Priority: optional
+Maintainer: "Geoffrey Biggs" <geoff@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-cmake-ros-core, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-dynmsg, ros-humble-dynmsg-msgs <!nocheck>, ros-humble-example-interfaces <!nocheck>, ros-humble-geometry-msgs <!nocheck>, ros-humble-rcl, ros-humble-rcl-action, ros-humble-rmw, ros-humble-std-msgs <!nocheck>, ros-humble-test-msgs <!nocheck>, ros-humble-yaml-cpp-vendor, ros-humble-ros-workspace
+Homepage: https://index.ros.org/p/dynmsg_demo/#humble
+Standards-Version: 3.9.2
+
+Package: ros-humble-dynmsg-demo
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-ament-cmake-ros-core, ros-humble-dynmsg, ros-humble-rcl, ros-humble-rcl-action, ros-humble-rmw, ros-humble-yaml-cpp-vendor, ros-humble-ros-workspace
+Description: Demo of dynamic message type loading
