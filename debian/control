@@ -1,0 +1,12 @@
+Source: ros-humble-dynmsg
+Section: misc
+Priority: optional
+Maintainer: "Geoffrey Biggs" <geoff@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-cmake-ros-core, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-rcutils, ros-humble-rosidl-runtime-c, ros-humble-rosidl-runtime-cpp, ros-humble-rosidl-typesupport-introspection-c, ros-humble-rosidl-typesupport-introspection-cpp, ros-humble-std-msgs <!nocheck>, ros-humble-yaml-cpp-vendor, ros-humble-ros-workspace
+Homepage: https://index.ros.org/p/dynmsg/#humble
+Standards-Version: 3.9.2
+
+Package: ros-humble-dynmsg
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-ament-cmake-ros-core, ros-humble-rcutils, ros-humble-rosidl-runtime-c, ros-humble-rosidl-runtime-cpp, ros-humble-rosidl-typesupport-introspection-c, ros-humble-rosidl-typesupport-introspection-cpp, ros-humble-yaml-cpp-vendor, ros-humble-ros-workspace
+Description: Introspection tools for message to/from YAML conversions
